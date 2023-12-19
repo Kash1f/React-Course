@@ -1,9 +1,14 @@
-
+import Video from "./components/Video"
 
 function App(){
 
-  return<div>Hello World</div>
-
+  return(
+  
+  <> 
+  <div>Hello</div>
+  <Video></Video>
+  </>
+  )
 }
 
 export default App
