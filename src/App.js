@@ -6,7 +6,9 @@ function App(){
   
   <> 
   <div>Hello</div>
-  <Video></Video>
+  {/* ye title props obj me obj ki form me jaingy */}
+  <Video bgColor="red" title="React Js Tutorial"></Video>  
+  <Video bgColor="aqua" title="Node Js Tutorial"></Video>
   </>
   )
 }
