@@ -24,7 +24,8 @@ function App(){
 {/* key and its value -> video = key, title = value, key-value-pair*/}
 
 <div style={{clear:'both'}}>
-    <PlayButton></PlayButton>
+    <PlayButton message="play-message">Play</PlayButton>
+    <PlayButton message="pause-message">Button</PlayButton>
     </div>
   </div>
  

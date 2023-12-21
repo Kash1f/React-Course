@@ -1,8 +1,14 @@
 import './PlayButton.css'
 
-const PlayButton = () => {
+const PlayButton = ({message,children}) => {
+
+    function handleClick(){
+        console.log(message);
+    }
+
+
   return (
-   <button onClick={()=>console.log('play')}>Play</button>
+   <button onClick={handleClick}>{children}</button>
   )
 }
 
