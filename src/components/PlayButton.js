@@ -1,11 +1,11 @@
 import './PlayButton.css'
 
-const PlayButton = ({message,children, onClick}) => {
-
+const PlayButton = ({message,children, onPlay}) => {
+  let playing = false;
     function handleClick(){
-        onClick();
+        if(playing) onpause();
+        onPlay();
     }
-
 
   return (
    <button onClick={handleClick}>{children}</button>

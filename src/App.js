@@ -2,32 +2,32 @@ import Video from "./components/Video"
 import './App.css'
 import videos from './data/data'
 import PlayButton from "./components/PlayButton"
-function App(){
- 
-  return(
-  <div className="App">
-  <div>Videos</div>
+function App() {
 
-    {
-      videos.map(video=><Video
-        key={video.id}
-         title={video.title} 
-         views={video.views} 
-         time={video.time} 
-         channel={video.channel} 
-         verified={video.verified}
-         id={video.id}
-         ></Video>)
-    }
+  return (
+    <div className="App">
+      <div>Videos</div>
 
-{/* key and its value -> video = key, title = value, key-value-pair*/}
+      {
+        videos.map(video => <Video
+          key={video.id}
+          title={video.title}
+          views={video.views}
+          time={video.time}
+          channel={video.channel}
+          verified={video.verified}
+          id={video.id}
+        ></Video>)
+      }
 
-<div style={{clear:'both'}}>
-    <PlayButton message="play-message" onClick={()=>console.log('Playyy')}>Play</PlayButton>
-    <PlayButton message="pause-message" onClick={()=>alert('Pause')}>Pause</PlayButton>
+      {/* key and its value -> video = key, title = value, key-value-pair*/}
+
+      <div style={{ clear: 'both' }}>
+<PlayButton message="play-message" onPlay={() => console.log('Playyy')}>Play</PlayButton>
+      <PlayButton message="pause-message" onSmash={() => alert('Pause')}>Pause</PlayButton>
+      </div>
     </div>
-  </div>
- 
+
   )
 }
 
