@@ -2,7 +2,7 @@ import './PlayButton.css'
 
 const PlayButton = () => {
   return (
-   <button onClick={console.log('play')}>Play</button>
+   <button onClick={()=>console.log('play')}>Play</button>
   )
 }
 
