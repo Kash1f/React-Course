@@ -1,46 +1,33 @@
 import Video from "./components/Video"
 import './App.css'
+import videos from './data/data'
+import PlayButton from "./components/PlayButton"
 function App(){
 
-  let videos = [{
-    title: "React Tutorial",
-    views: "1M",
-    time: "3 months ago",
-    channel: "Code with Me",
-    verified: true
-  },{
-    title: "Node JS Tutorial",
-    views: "100K",
-    time: "1 year ago",
-    channel: "Code with Me",
-    verified: true
-  },
-{
-    title: "MongoDB Tutorial",
-    views: "100K",
-    time: "1 month ago",
-    channel: "Code with Me",
-    verified: false
-}] 
-  return(
   
-  <> 
+  return(
   <div className="App">
   <div>Videos</div>
 
     {
-      videos.map(video=>
-        <Video
+      videos.map(video=><Video
+        key={video.id}
          title={video.title} 
          views={video.views} 
          time={video.time} 
          channel={video.channel} 
-         verified={false}></Video>)
+         verified={video.verified}
+         id={video.id}
+         ></Video>)
     }
 
+{/* key and its value -> video = key, title = value, key-value-pair*/}
 
+<div style={{clear:'both'}}>
+    <PlayButton></PlayButton>
+    </div>
   </div>
-  </>
+ 
   )
 }
 
