@@ -1,9 +1,9 @@
 import './PlayButton.css'
 
-const PlayButton = ({message,children}) => {
+const PlayButton = ({message,children, onClick}) => {
 
     function handleClick(){
-        console.log(message);
+        onClick();
     }
 
 

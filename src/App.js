@@ -3,8 +3,7 @@ import './App.css'
 import videos from './data/data'
 import PlayButton from "./components/PlayButton"
 function App(){
-
-  
+ 
   return(
   <div className="App">
   <div>Videos</div>
@@ -24,8 +23,8 @@ function App(){
 {/* key and its value -> video = key, title = value, key-value-pair*/}
 
 <div style={{clear:'both'}}>
-    <PlayButton message="play-message">Play</PlayButton>
-    <PlayButton message="pause-message">Button</PlayButton>
+    <PlayButton message="play-message" onClick={()=>console.log('Playyy')}>Play</PlayButton>
+    <PlayButton message="pause-message" onClick={()=>alert('Pause')}>Pause</PlayButton>
     </div>
   </div>
  
