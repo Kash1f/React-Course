@@ -1,7 +1,7 @@
 
 import './Video.css'
 
-const Video = ({title, id, channel, views,time,verified}) => {
+const Video = ({title, id, channel, views,time,verified, children}) => {
 
 
 return (
@@ -9,12 +9,15 @@ return (
     <>
     <div className="container">
     <div className="pic">
-    <img src={`https://picsum.photos/id/2/${id}}160/90`} alt="Katherine Johnson"/>
+    <img src={`https://picsum.photos/id/${id}/160/90`} alt="Katherine Johnson"/>
     </div>
     <div className='title'> {title}</div> 
     <div className='channel'> {channel} {verified ? '✅' : null }</div> 
     <div className='views'> {views} views <span>.</span> {time}
     </div>     
+    <div>
+    {children}
+    </div>
     </div>
     </>
     )

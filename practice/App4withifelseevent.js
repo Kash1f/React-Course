@@ -17,23 +17,16 @@ function App() {
           channel={video.channel}
           verified={video.verified}
           id={video.id}
-        >
-
-<PlayButton message="play-message" onPlay={() => console.log('Play')} onPause={() => console.log('Pause')}>Play</PlayButton>
-
-        </Video>)
+        ></Video>)
       }
 
-     
-
-   
+      {/* key and its value -> video = key, title = value, key-value-pair*/}
 
       <div style={{ clear: 'both' }}>
+<PlayButton message="play-message" onPlay={() => console.log('Play')} onPause={()=>console.log('Pause')}>Play</PlayButton>
 
-        {/* <PlayButton message="play-message" onPlay={() => console.log('Play')} onPause={()=>console.log('Pause')}>Play</PlayButton> */}
 
-
-        {/* <PlayButton message="pause-message" onSmash={() => alert('Pause')}>Pause</PlayButton> */}
+      {/* <PlayButton message="pause-message" onSmash={() => alert('Pause')}>Pause</PlayButton> */}
 
       </div>
     </div>
