@@ -2,6 +2,10 @@ import Video from "./components/Video"
 import './App.css'
 import videos from './data/data'
 import PlayButton from "./components/PlayButton"
+
+
+
+
 function App() {
 
   return (
