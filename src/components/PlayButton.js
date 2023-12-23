@@ -1,8 +1,10 @@
 import './PlayButton.css'
 
-const PlayButton = ({message,children, onPlay, onPause}) => {
+const PlayButton = ({children, onPlay, onPause}) => {
   let playing = false;  //don't use this approach
-    function handleClick(){
+    function handleClick(e){
+      console.log(e);
+      e.stopPropagation()
         if(playing) onPause();
         else onPlay();
 
@@ -10,7 +12,7 @@ const PlayButton = ({message,children, onPlay, onPause}) => {
     }
 
   return (
-   <button onClick={handleClick}> {children} :{playing ?'>' : '||'}</button>
+   <button onClick={handleClick}> {children} {playing ?'>' : '||'}</button>
   )
 }
 

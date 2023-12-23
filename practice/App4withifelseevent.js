@@ -22,11 +22,13 @@ function App() {
 
       {/* key and its value -> video = key, title = value, key-value-pair*/}
 
+      {/* neeche PlayButton me button ka name diya hai aur is Play Pause name wale button ko as children pass karengy PlayButton wali file me*/}
+
       <div style={{ clear: 'both' }}>
 <PlayButton message="play-message" onPlay={() => console.log('Play')} onPause={()=>console.log('Pause')}>Play</PlayButton>
 
 
-      {/* <PlayButton message="pause-message" onSmash={() => alert('Pause')}>Pause</PlayButton> */}
+      <PlayButton message="pause-message" onSmash={() => alert('Pause')}>Pause</PlayButton>
 
       </div>
     </div>

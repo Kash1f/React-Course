@@ -5,7 +5,7 @@ import PlayButton from "./components/PlayButton"
 function App() {
 
   return (
-    <div className="App">
+    <div className="App" onClick={()=>console.log('App')}>
       <div>Videos</div>
 
       {
@@ -19,14 +19,16 @@ function App() {
           id={video.id}
         >
 
-<PlayButton message="play-message" onPlay={() => console.log('Play')} onPause={() => console.log('Pause')}>Play</PlayButton>
+          <PlayButton onPlay={() => console.log('Play',video.title)}
+            onPause={() => console.log('Pause',video.title)}>
+            {video.title}</PlayButton>
 
         </Video>)
       }
 
-     
 
-   
+
+
 
       <div style={{ clear: 'both' }}>
 
