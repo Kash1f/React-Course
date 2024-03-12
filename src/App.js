@@ -1,19 +1,21 @@
 import Video from "./components/Video"
 import './App.css'
-import videos from './data/data'
+import videoDB from './data/data'
 import PlayButton from "./components/PlayButton"
-
-
+import { useState } from "react"
 
 
 function App() {
 
+  const [videos, setVideos] = useState(videoDB)
+
   return (
+
+    <>
     <div className="App" onClick={()=>console.log('App')}>
       <div>Videos</div>
 
-      {
-        videos.map(video => <Video
+      {videoDB.map(video => <Video
           key={video.id}
           title={video.title}
           views={video.views}
@@ -44,6 +46,8 @@ function App() {
       </div>
     </div>
 
+    {/* <Counter></Counter> */}
+</>
   )
 }
 
