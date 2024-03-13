@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './PlayButton.css'
 
 
-const PlayButton = ({children, onPlay, onPause}) => {
+const PlayButton = ({ children, onPlay, onPause}) => {
   const [playing,setPlaying] =  useState(false); 
 
     function handleClick(e){
