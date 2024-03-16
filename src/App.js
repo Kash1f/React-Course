@@ -15,19 +15,18 @@ function App() {
     <div className="App" onClick={()=>console.log('App')}>
       <div>
         <button onClick={()=> {
-          setVideos ([...videos,{
-            id:videos.length,
-            title: "MongoDB Tutorial",
+          setVideos ([...videos,{id:videos.length+1,
+            title: "Demo JS Tutorial",
             views: "100K",
             time: "1 month ago",
             channel: "Code with Me",
-            verified: false
+            verified: true
 
-          }])
-        }}></button>
+          }]);
+        }}>Add Video</button>
       </div>
 
-      {videoDB.map((video) => <Video
+      {videos.map((video) => <Video
           key={video.id}
           title={video.title}
           views={video.views}
