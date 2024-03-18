@@ -1,15 +1,28 @@
-import React from 'react'
+import React from "react";
 
 function AddVideo() {
   return (
     <>
-    <form>
+      <form>
         <input type="text" />
         <input type="text" />
-        
-    </form>
+        <button
+          onClick={() => {
+            setVideos([...videos,{
+                id: videos.length + 1,
+                title: "Demo JS Tutorial",
+                views: "100K",
+                time: "1 month ago",
+                channel: "Code with Me",
+                verified: true,
+              },
+            ]);
+          }}>
+          Add Video
+        </button>
+      </form>
     </>
-  )
+  );
 }
 
-export default AddVideo
+export default AddVideo;
