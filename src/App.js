@@ -3,6 +3,7 @@ import './App.css'
 import videoDB from './data/data'
 import PlayButton from "./components/PlayButton"
 import { useState } from "react"
+import AddVideo from "./components/AddVideo"
 
 
 function App() {
@@ -13,18 +14,8 @@ function App() {
 
     <>
     <div className="App" onClick={()=>console.log('App')}>
-      <div>
-        <button onClick={()=> {
-          setVideos ([...videos,{id:videos.length+1,
-            title: "Demo JS Tutorial",
-            views: "100K",
-            time: "1 month ago",
-            channel: "Code with Me",
-            verified: true
-
-          }]);
-        }}>Add Video</button>
-      </div>
+     
+     <AddVideo/>
 
       {videos.map((video) => <Video
           key={video.id}
