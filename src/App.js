@@ -10,12 +10,20 @@ function App() {
 
   const [videos, setVideos] = useState(videoDB)
 
+  function addVideos(video){
+    setVideos([
+      ...videos,   //videos ko exp kiya us se saray objects agaye data wale
+      {...video, id: videos.length +1} //and adding new video to it, ye child se aayi hai
+    ])
+
+  }
+
   return (
 
     <>
     <div className="App" onClick={()=>console.log('App')}>
      
-     <AddVideo/>
+     <AddVideo addVideos={addVideos}/>
 
       {videos.map((video) => <Video
           key={video.id}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './AddVideo.css'
 
 
-function AddVideo() {
+function AddVideo({addVideos}) {
 
   const [video, setVideo] = useState({
         time: "1 month ago",
@@ -10,7 +10,9 @@ function AddVideo() {
         verified: true,
   })
 
-  function handleSubmit(){
+  function handleSubmit(e){
+    e.preventDefault();
+    addVideos(video)
     console.log(video);
 
   }
@@ -27,9 +29,8 @@ function AddVideo() {
     <>
       <form>
         <input type="text" name="title" onChange={handlChange} placeholder="title" />
-        <input type="text" name="title" onChange={handlChange} placeholder="views"/>
-        <button
-        onClick={handleSubmit}
+        <input type="text" name="views" onChange={handlChange} placeholder="views"/>
+        <button onClick={handleSubmit}
           // onClick={() => {
             // setVideos([...videos,{
             //     id: videos.length + 1,
