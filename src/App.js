@@ -1,9 +1,8 @@
-import Video from "./components/Video"
 import './App.css'
 import videoDB from './data/data'
-import PlayButton from "./components/PlayButton"
 import { useState } from "react"
 import AddVideo from "./components/AddVideo"
+import VideoList from "./components/VideoList"
 
 
 function App() {
@@ -15,45 +14,20 @@ function App() {
       ...videos,   //videos ko exp kiya us se saray objects agaye data wale
       {...video, id: videos.length +1} //and adding new video to it, ye child se aayi hai
     ])
+  }
 
+  function deleteVideo(id){
+  
   }
 
   return (
 
     <>
     <div className="App" onClick={()=>console.log('App')}>
-     
+    
      <AddVideo addVideos={addVideos}/>
+     <VideoList delete={deleteVideo}videos={videos} />
 
-      {videos.map((video) => <Video
-          key={video.id}
-          title={video.title}
-          views={video.views}
-          time={video.time}
-          channel={video.channel}
-          verified={video.verified}
-          id={video.id}
-        >
-
-          <PlayButton onPlay={() => console.log('Playing',video.title)}
-            onPause={() => console.log('Paused',video.title)}>
-            {video.title}</PlayButton>
-
-        </Video>)
-      }
-
-
-
-
-
-      <div style={{ clear: 'both' }}>
-
-        {/* <PlayButton message="play-message" onPlay={() => console.log('Play')} onPause={()=>console.log('Pause')}>Play</PlayButton> */}
-
-
-        {/* <PlayButton message="pause-message" onSmash={() => alert('Pause')}>Pause</PlayButton> */}
-
-      </div>
     </div>
 
     {/* <Counter></Counter> */}

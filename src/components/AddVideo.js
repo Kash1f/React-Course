@@ -1,51 +1,63 @@
 import React, { useState } from "react";
-import './AddVideo.css'
+import "./AddVideo.css";
+
+const initialState = {
+  time: "1 month ago",
+  channel: "Code with Me",
+  verified: true,
+  title: '',
+  views:''
+}
 
 
-function AddVideo({addVideos}) {
+function AddVideo({ addVideos }) {
+  const [video, setVideo] = useState(initialState);
 
-  const [video, setVideo] = useState({
-        time: "1 month ago",
-        channel: "Code with Me",
-        verified: true,
-  })
-
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
-    addVideos(video)
-    console.log(video);
-
+    addVideos(video);
+    setVideo(initialState);
+   
   }
 
-  function handlChange(e){
-    
-    setVideo({...video,
-      [e.target.name] : e.target.value
-    })}
-
-
+  function handlChange(e) {
+    setVideo({ ...video, [e.target.name]: e.target.value });
+  }
 
   return (
     <>
       <form>
-        <input type="text" name="title" onChange={handlChange} placeholder="title" />
-        <input type="text" name="views" onChange={handlChange} placeholder="views"/>
-        <button onClick={handleSubmit}
-          // onClick={() => {
-            // setVideos([...videos,{
-            //     id: videos.length + 1,
-            //     title: "Demo JS Tutorial",
-            //     views: "100K",
-            //     time: "1 month ago",
-            //     channel: "Code with Me",
-            //     verified: true,
-            //   },
-            // ]);
-          // }}
-          >
-          Add Video
-        </button>
+        <input
+          type="text"
+          name="title"
+          onChange={handlChange}
+          placeholder="title"
+          value={video.title}
+          
+        />
+        <input
+          type="text"
+          name="views"
+          onChange={handlChange}
+          placeholder="views"
+          
+        />
+        <button
+          onClick={handleSubmit}>Add Video</button>
       </form>
+
+      {/* // onClick={() => {
+          setVideos([...videos,{
+              id: videos.length + 1,
+              title: "Demo JS Tutorial",
+              views: "100K",
+              time: "1 month ago",
+              channel: "Code with Me",
+              verified: true,
+            },
+          ]);
+          }} */}
+      
     </>
   );
 }
