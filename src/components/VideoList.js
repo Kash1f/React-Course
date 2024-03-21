@@ -2,7 +2,7 @@ import React from 'react'
 import Video from './Video'
 import PlayButton from './PlayButton'
 
-const VideoList = ({videos}) => {
+const VideoList = ({videos, deleteVideo}) => {
   return (
     <>
 
@@ -15,6 +15,7 @@ const VideoList = ({videos}) => {
           channel={video.channel}
           verified={video.verified}
           id={video.id}
+          deleteVideo={deleteVideo}
         >
 
           <PlayButton onPlay={() => console.log('Playing',video.title)}

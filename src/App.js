@@ -26,7 +26,7 @@ function App() {
     <div className="App" onClick={()=>console.log('App')}>
     
      <AddVideo addVideos={addVideos}/>
-     <VideoList delete={deleteVideo}videos={videos} />
+     <VideoList delete={deleteVideo} videos={videos} />
 
     </div>
 
